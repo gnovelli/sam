@@ -1,0 +1,31 @@
+server:
+  port: 5000
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: api-key-management
+
+# InfluxDB Configuration - set enabled to false to use in-memory repository
+influxdb:
+  enabled: false 
+  url: ${INFLUXDB_URL:http://localhost:8086}
+  token: ${INFLUXDB_TOKEN:dummy-token}
+  org: ${INFLUXDB_ORG:test-org}
+  bucket: ${INFLUXDB_BUCKET:api-keys}
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.apikeys: DEBUG
+    org.springframework.security: INFO
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  packages-to-scan: com.apikeys.controller
