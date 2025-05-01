@@ -86,4 +86,4 @@ Run tests using:
 
 ## License
 
-See the LICENSE file for details.
+See the LICENSE file for details
